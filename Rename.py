@@ -3,7 +3,8 @@ import os
 import json
 
 #打开json文件夹；
-file = open('/home/wenlong/TCGA/metadata.cart.2020-03-20.json', encoding='utf-8')
+## 根据自己情况修改*号为自己的路经
+file = open('*/TCGA/metadata.cart.2020-03-20.json', encoding='utf-8') 
 #读取json文件夹；
 json_precess = json.loads(str(file.read()))
 #创建空字典；
@@ -16,8 +17,9 @@ print(dict)
 
 
 #mainfest文件路径；
-path ='/home/wenlong/TCGA/mainfest'
-filelist = os.listdir(path)  #mainfest子路径下的所有文件列表；
+path ='*/TCGA/mainfest'
+filelist = os.listdir(path)  
+#mainfest子路径下的所有文件列表；
 for file_one in filelist:
     file = path + '/' +file_one
     file_tar=file_one + '.FPKM.txt.gz'
@@ -33,11 +35,3 @@ for file_one in filelist:
         filename =os.path.splitext(file_tar)[0]
         newdir = os.path.join(path,dict[key])
         os.rename(olddir,newdir)
-    #olddir = file +'/' +list  #原来文件名
-    #newdir = '/home/wenlong/TCGA/new' + '/' + dict[list.split('.gz')[0]] +'.gz'  #新的文件名
-    #os.rename(olddir,newdir)#重新命名
-    # olddir = os.path.join(path,file_one)
-    # print(olddir)
-    # filename =os.path.splitext(file_one)[0]
-    # newdir = os.path.join(path,dict[file_one])
-    # os.rename(olddir,newdir)名
