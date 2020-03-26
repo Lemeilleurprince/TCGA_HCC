@@ -8,7 +8,7 @@
 
 rm(list = ls()) #清空变量
 options(stringsAsFactors = F)
-##以下代码是为了合并从TCGA官网下载的单个样本基因表达数据
+##以下代if(F)括号内的代码是为了合并从TCGA官网下载的单个样本基因表达数据
 ##为一个大的基因表达矩阵HCC_counts.csv
 ##可以不运行，如果想练习，请自便
 if(F){
